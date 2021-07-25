@@ -1,12 +1,11 @@
 # xkb-layouts
 
-## ANSI Custom
+## Custom ANSI
 
-See the `ansi_custom` file in `symbols/`
+See the `custom_ansi` file in `symbols/`
 
 
 
 ## Colemak-DH ANSI
 
 See the `colemak_dh_ansi` file in `symbols/`
-

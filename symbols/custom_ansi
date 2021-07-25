@@ -1,16 +1,16 @@
-// ANSI Custom
+// Custom ANSI
 //
-// Copy this file to /usr/share/X11/xkb/symbols/ansi_custom and then:
+// Copy this file to /usr/share/X11/xkb/symbols/custom_ansi and then:
 //
 // - Add the following layout to base.lst and evdev.lst in /usr/share/X11/xkb/rules/
-// ansi_custom     ANSI Custom
+// custom_ansi     Custom ANSI
 //
 // - Add the following layout to base.xml and evdev.xml in /usr/share/X11/xkb/rules/
 // <layout>
 //   <configItem>
-//     <name>ansi_custom</name>
+//     <name>custom_ansi</name>
 //     <shortDescription>ans</shortDescription>
-//     <description>ANSI Custom</description>
+//     <description>Custom ANSI</description>
 //     <languageList>
 //       <iso639Id>eng</iso639Id>
 //     </languageList>
@@ -25,11 +25,11 @@
 // change the "Switching to another layout" shortcut
 
 default partial alphanumeric_keys modifier_keys
-xkb_symbols "ansi_custom" {
+xkb_symbols "custom_ansi" {
 
   include "us(altgr-intl)"
 
-  name[Group1] = "ANSI Custom";
+  name[Group1] = "Custom ANSI";
 
   key <CAPS> { [ Control_L ] };
   key <LCTL> { [ Escape    ] };
