@@ -39,6 +39,9 @@ xkb_symbols "basic" {
   key <BKSL> { [ BackSpace, BackSpace, Delete             ] };
   key <BKSP> { [ backslash, bar,       notsign, brokenbar ] };
 
+  key <MENU>  { [ Control_R ] };
+  key <RCTL>  { [ Menu      ] };
+
   key <LSGT> { [ backslash, bar, backslash, bar ] };
 
   key <TLDE> { [ grave, asciitilde, dead_grave, dead_tilde ] };

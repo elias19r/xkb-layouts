@@ -39,6 +39,9 @@ xkb_symbols "basic" {
   key <BKSL> { [ BackSpace, BackSpace, Delete             ] };
   key <BKSP> { [ backslash, bar,       notsign, brokenbar ] };
 
+  key <MENU>  { [ Control_R ] };
+  key <RCTL>  { [ Menu      ] };
+
   key <AE09> { [ 9, parenleft,  ordfeminine, dead_breve     ] };
   key <AE10> { [ 0, parenright, masculine,   dead_abovering ] };
 
