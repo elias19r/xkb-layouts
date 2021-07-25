@@ -36,8 +36,8 @@ xkb_symbols "basic" {
   key <LCTL> { [ Escape    ] };
   key <ESC>  { [ Caps_Lock ] };
 
-  key <BKSL> { [ BackSpace, Delete, BackSpace, Delete    ] };
-  key <BKSP> { [ backslash, bar,    notsign,   brokenbar ] };
+  key <BKSL> { [ BackSpace, BackSpace, Delete             ] };
+  key <BKSP> { [ backslash, bar,       notsign, brokenbar ] };
 
   key <AE09> { [ 9, parenleft,  ordfeminine, dead_breve     ] };
   key <AE10> { [ 0, parenright, masculine,   dead_abovering ] };
