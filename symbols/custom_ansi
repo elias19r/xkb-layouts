@@ -25,7 +25,7 @@
 // change the "Switching to another layout" shortcut
 
 default partial alphanumeric_keys modifier_keys
-xkb_symbols "custom_ansi" {
+xkb_symbols "basic" {
 
   include "us(altgr-intl)"
 
@@ -38,15 +38,26 @@ xkb_symbols "custom_ansi" {
   key <BKSL> { [ BackSpace, Delete, BackSpace, Delete    ] };
   key <BKSP> { [ backslash, bar,    notsign,   brokenbar ] };
 
-  key <AC06> { [ h, H, Left,  Left  ] };
-  key <AC07> { [ j, J, Down,  Down  ] };
-  key <AC08> { [ k, K, Up,    Up    ] };
-  key <AC09> { [ l, L, Right, Right ] };
+  key <AE09> { [ 9, parenleft,  ordfeminine, dead_breve     ] };
+  key <AE10> { [ 0, parenright, masculine,   dead_abovering ] };
 
-  key <AC04> { [ f, F, oe,         OE ] };
+  key <AD11> { [ bracketleft,  braceleft,  registered, copyright ] };
+  key <AD12> { [ bracketright, braceright, oslash,     Ooblique  ] };
+
+  key <AC06> { [ h,         H,     Left,   Left      ] };
+  key <AC07> { [ j,         J,     Down,   Down      ] };
+  key <AC08> { [ k,         K,     Up,     Up        ] };
+  key <AC09> { [ l,         L,     Right,  Right     ] };
+  key <AC10> { [ semicolon, colon, degree, paragraph ] };
+
+  key <AC04> { [ f, F, ntilde,     Ntilde     ] };
   key <AC05> { [ g, G, idiaeresis, Idiaeresis ] };
 
-  key <AB05> { [ b, B, oslash, Ooblique ] };
+  key <AB03> { [ c, C, cent,  mu    ] };
+  key <AB04> { [ v, V, Home,  Home  ] };
+  key <AB05> { [ b, B, Next,  Next  ] };
+  key <AB06> { [ n, N, Prior, Prior ] };
+  key <AB07> { [ m, M, End,   End   ] };
 
   include "level3(ralt_switch)"
 };
