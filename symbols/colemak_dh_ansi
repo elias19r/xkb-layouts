@@ -83,8 +83,8 @@ xkb_symbols "basic" {
   key <AB02> { [ c,      C,        cent,          mu         ] };
   key <AB03> { [ d,      D,        ae,            AE         ] };
   key <AB04> { [ v,      V,        Home,          Home       ] };
-  key <AB05> { [ z,      Z,        Next,          Next       ] };
-  key <AB06> { [ k,      K,        Prior,         Prior      ] };
+  key <AB05> { [ z,      Z,        Prior,         Prior      ] };
+  key <AB06> { [ k,      K,        Next,          Next       ] };
   key <AB07> { [ h,      H,        End,           End        ] };
   key <AB08> { [ comma,  less,     ccedilla,      Ccedilla   ] };
   key <AB09> { [ period, greater,  dead_abovedot, dead_caron ] };

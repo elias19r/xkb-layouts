@@ -55,8 +55,8 @@ xkb_symbols "basic" {
 
   key <AB03> { [ c, C, cent,  mu    ] };
   key <AB04> { [ v, V, Home,  Home  ] };
-  key <AB05> { [ b, B, Next,  Next  ] };
-  key <AB06> { [ n, N, Prior, Prior ] };
+  key <AB05> { [ b, B, Prior, Prior ] };
+  key <AB06> { [ n, N, Next,  Next  ] };
   key <AB07> { [ m, M, End,   End   ] };
 
   include "level3(ralt_switch)"
