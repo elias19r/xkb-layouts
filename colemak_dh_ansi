@@ -1,0 +1,87 @@
+// Colemak-DH ANSI
+//
+// Copy this file to symbols/colemak_dh_ansi and then:
+//
+// - Add the following layout in rules/base.lst and rules/evdev.lst
+// colemak_dh_ansi Colemak-DH ANSI
+//
+// - Add the following layout in rules/base.xml and rules/evdev.xml
+// <layout>
+//   <configItem>
+//     <name>colemak_dh_ansi</name>
+//     <shortDescription>cmk</shortDescription>
+//     <description>Colemak-DH ANSI</description>
+//     <languageList>
+//       <iso639Id>eng</iso639Id>
+//     </languageList>
+//   </configItem>
+// </layout>
+
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "colemak_dh_ansi" {
+
+  include "us"
+
+  name[Group1] = "Colemak-DH ANSI";
+
+  key <CAPS> { [ Control_L ] };
+  key <LCTL> { [ Escape    ] };
+  key <ESC>  { [ Caps_Lock ] };
+
+  key <BKSL> { [ BackSpace, Delete, BackSpace, Delete    ] };
+  key <BKSP> { [ backslash, bar,    notsign,   brokenbar ] };
+  key <LSGT> { [ backslash, bar,    backslash, bar       ] };
+
+  key <TLDE> { [ grave, asciitilde, dead_grave, dead_tilde ] };
+
+  key <AE01> { [ 1,     exclam,      onesuperior,          exclamdown       ] };
+  key <AE02> { [ 2,     at,          twosuperior,          dead_doubleacute ] };
+  key <AE03> { [ 3,     numbersign,  threesuperior,        dead_macron      ] };
+  key <AE04> { [ 4,     dollar,      currency,             sterling         ] };
+  key <AE05> { [ 5,     percent,     EuroSign,             dead_cedilla     ] };
+  key <AE06> { [ 6,     asciicircum, dead_circumflex,      onequarter       ] };
+  key <AE07> { [ 7,     ampersand,   dead_horn,            onehalf          ] };
+  key <AE08> { [ 8,     asterisk,    dead_ogonek,          threequarters    ] };
+  key <AE09> { [ 9,     parenleft,   leftsinglequotemark,  dead_breve       ] };
+  key <AE10> { [ 0,     parenright,  rightsinglequotemark, dead_abovering   ] };
+  key <AE11> { [ minus, underscore,  yen,                  dead_belowdot    ] };
+  key <AE12> { [ equal, plus,        multiply,             division         ] };
+
+  key <AD01> { [ q,            Q,          adiaeresis,     Adiaeresis           ] };
+  key <AD02> { [ w,            W,          aring,          Aring                ] };
+  key <AD03> { [ f,            F,          Up,             Up                   ] };
+  key <AD04> { [ p,            P,          odiaeresis,     Odiaeresis           ] };
+  key <AD05> { [ b,            B,          ssharp,         section              ] };
+  key <AD06> { [ j,            J,          idiaeresis,     Idiaeresis           ] };
+  key <AD07> { [ l,            L,          oslash,         Ooblique             ] };
+  key <AD08> { [ u,            U,          uacute,         Uacute               ] };
+  key <AD09> { [ y,            Y,          udiaeresis,     Udiaeresis           ] };
+  key <AD10> { [ semicolon,    colon,      paragraph,      degree               ] };
+  key <AD11> { [ bracketleft,  braceleft,  guillemotleft,  leftdoublequotemark  ] };
+  key <AD12> { [ bracketright, braceright, guillemotright, rightdoublequotemark ] };
+
+  key <AC01> { [ a,          A,        aacute,     Aacute         ] };
+  key <AC02> { [ r,          R,        Left,       Left           ] };
+  key <AC03> { [ s,          S,        Down,       Down           ] };
+  key <AC04> { [ t,          T,        Right,      Right          ] };
+  key <AC05> { [ g,          G,        ediaeresis, Ediaeresis     ] };
+  key <AC06> { [ m,          M,        mu,         mu             ] };
+  key <AC07> { [ n,          N,        ntilde,     Ntilde         ] };
+  key <AC08> { [ e,          E,        eacute,     Eacute         ] };
+  key <AC09> { [ i,          I,        iacute,     Iacute         ] };
+  key <AC10> { [ o,          O,        oacute,     Oacute         ] };
+  key <AC11> { [ apostrophe, quotedbl, dead_acute, dead_diaeresis ] };
+
+  key <AB01> { [ x,      X,        oe,            OE         ] };
+  key <AB02> { [ c,      C,        copyright,     cent       ] };
+  key <AB03> { [ d,      D,        eth,           ETH        ] };
+  key <AB04> { [ v,      V,        registered,    registered ] };
+  key <AB05> { [ z,      Z,        ae,            AE         ] };
+  key <AB06> { [ k,      K,        oe,            OE         ] };
+  key <AB07> { [ h,      H,        thorn,         THORN      ] };
+  key <AB08> { [ comma,  less,     ccedilla,      Ccedilla   ] };
+  key <AB09> { [ period, greater,  dead_abovedot, dead_caron ] };
+  key <AB10> { [ slash,  question, questiondown,  dead_hook  ] };
+
+  include "level3(ralt_switch)"
+};
