@@ -1,0 +1,45 @@
+// ANSI custom
+//
+// Copy this file to symbols/ansi_custom and then:
+//
+// - Add the following layout in rules/base.lst and rules/evdev.lst
+// ansi_custom     ANSI Custom
+//
+// - Add the following layout in rules/base.xml and rules/evdev.xml
+// <layout>
+//   <configItem>
+//     <name>ansi_custom</name>
+//     <shortDescription>ans</shortDescription>
+//     <description>ANSI Custom</description>
+//     <languageList>
+//       <iso639Id>eng</iso639Id>
+//     </languageList>
+//   </configItem>
+// </layout>
+
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "ansi_custom" {
+
+  include "us(altgr-intl)"
+
+  name[Group1] = "ANSI Custom";
+
+  key <CAPS> { [ Control_L ] };
+  key <LCTL> { [ Escape    ] };
+  key <ESC>  { [ Caps_Lock ] };
+
+  key <BKSL> { [ BackSpace, Delete, BackSpace, Delete    ] };
+  key <BKSP> { [ backslash, bar,    notsign,   brokenbar ] };
+
+  key <AC06> { [ h, H, Left,  Left  ] };
+  key <AC07> { [ j, J, Down,  Down  ] };
+  key <AC08> { [ k, K, Up,    Up    ] };
+  key <AC09> { [ l, L, Right, Right ] };
+
+  key <AC04> { [ f, F, oe,         OE ] };
+  key <AC05> { [ g, G, idiaeresis, Idiaeresis ] };
+
+  key <AB05> { [ b, B, oslash, Ooblique ] };
+
+  include "level3(ralt_switch)"
+};
