@@ -22,7 +22,8 @@
 //
 // NOTE: In case your CapsLock key does not start to function as Ctrl,
 // take a look at your "Keyboard Settings > Layouts > Options" and disable or
-// change the "Switching to another layout" shortcut
+// change the "Switching to another layout" shortcut. Also, try changing the
+// order of the listed layouts.
 
 default partial alphanumeric_keys modifier_keys
 xkb_symbols "basic" {
@@ -44,20 +45,20 @@ xkb_symbols "basic" {
   key <AD11> { [ bracketleft,  braceleft,  registered, copyright ] };
   key <AD12> { [ bracketright, braceright, oslash,     Ooblique  ] };
 
-  key <AC06> { [ h,         H,     Left,   Left      ] };
-  key <AC07> { [ j,         J,     Down,   Down      ] };
-  key <AC08> { [ k,         K,     Up,     Up        ] };
-  key <AC09> { [ l,         L,     Right,  Right     ] };
+  key <AC06> { type="CUSTOM_THREE_LEVEL", symbols=[ h, H, Left  ] };
+  key <AC07> { type="CUSTOM_THREE_LEVEL", symbols=[ j, J, Down  ] };
+  key <AC08> { type="CUSTOM_THREE_LEVEL", symbols=[ k, K, Up    ] };
+  key <AC09> { type="CUSTOM_THREE_LEVEL", symbols=[ l, L, Right ] };
   key <AC10> { [ semicolon, colon, degree, paragraph ] };
 
   key <AC04> { [ f, F, ntilde,     Ntilde     ] };
   key <AC05> { [ g, G, idiaeresis, Idiaeresis ] };
 
-  key <AB03> { [ c, C, cent,  mu    ] };
-  key <AB04> { [ v, V, Home,  Home  ] };
-  key <AB05> { [ b, B, Prior, Prior ] };
-  key <AB06> { [ n, N, Next,  Next  ] };
-  key <AB07> { [ m, M, End,   End   ] };
+  key <AB03> { [ c, C, cent, mu ] };
+  key <AB04> { type="CUSTOM_THREE_LEVEL", symbols=[ v, V, Home  ] };
+  key <AB05> { type="CUSTOM_THREE_LEVEL", symbols=[ b, B, Prior ] };
+  key <AB06> { type="CUSTOM_THREE_LEVEL", symbols=[ n, N, Next  ] };
+  key <AB07> { type="CUSTOM_THREE_LEVEL", symbols=[ m, M, End   ] };
 
   include "level3(ralt_switch)"
 };

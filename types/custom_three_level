@@ -1,0 +1,24 @@
+// Edit the default and complete files in /usr/share/X11/xkb/types/ and add:
+// include "custom_three_level"
+// after iso9995
+
+partial default xkb_types "default" {
+  virtual_modifiers LevelThree;
+
+  type "CUSTOM_THREE_LEVEL" {
+    modifiers = Shift+LevelThree;
+
+    map[None] = Level1;
+    map[Shift] = Level2;
+    map[LevelThree] = Level3;
+    map[Shift+LevelThree] = Level3;
+
+    level_name[Level1] = "Base";
+    level_name[Level2] = "Shift";
+    level_name[Level3] = "Level3";
+
+    // As this type preserves the Shift, we can use it when mapping Up, Down,
+    // Left, Right, Home, Prior, Next, End on alphanumeric keys
+    preserve[Shift+LevelThree] = Shift;
+  };
+};
