@@ -1,11 +1,11 @@
-// ANSI custom
+// ANSI Custom
 //
-// Copy this file to symbols/ansi_custom and then:
+// Copy this file to /usr/share/X11/xkb/symbols/ansi_custom and then:
 //
-// - Add the following layout in rules/base.lst and rules/evdev.lst
+// - Add the following layout to base.lst and evdev.lst in /usr/share/X11/xkb/rules/
 // ansi_custom     ANSI Custom
 //
-// - Add the following layout in rules/base.xml and rules/evdev.xml
+// - Add the following layout to base.xml and evdev.xml in /usr/share/X11/xkb/rules/
 // <layout>
 //   <configItem>
 //     <name>ansi_custom</name>
@@ -16,6 +16,13 @@
 //     </languageList>
 //   </configItem>
 // </layout>
+//
+// Reboot or logout/login if needed. The layout should be available at your
+// system's "Keyboard Settings > Layouts"
+//
+// NOTE: In case your CapsLock key does not start to function as Ctrl,
+// take a look at your "Keyboard Settings > Layouts > Options" and disable or
+// change the "Switching to another layout" shortcut
 
 default partial alphanumeric_keys modifier_keys
 xkb_symbols "ansi_custom" {

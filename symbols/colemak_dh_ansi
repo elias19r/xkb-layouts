@@ -1,11 +1,11 @@
 // Colemak-DH ANSI
 //
-// Copy this file to symbols/colemak_dh_ansi and then:
+// Copy this file to /usr/share/X11/xkb/symbols/symbols/colemak_dh_ansi and then:
 //
-// - Add the following layout in rules/base.lst and rules/evdev.lst
+// - Add the following layout to base.lst and evdev.lst in /usr/share/X11/xkb/rules/
 // colemak_dh_ansi Colemak-DH ANSI
 //
-// - Add the following layout in rules/base.xml and rules/evdev.xml
+// - Add the following layout to base.xml and evdev.xml in /usr/share/X11/xkb/rules/
 // <layout>
 //   <configItem>
 //     <name>colemak_dh_ansi</name>
@@ -16,6 +16,13 @@
 //     </languageList>
 //   </configItem>
 // </layout>
+//
+// Reboot or logout/login if needed. The layout should be available at your
+// system's "Keyboard Settings > Layouts"
+//
+// NOTE: In case your CapsLock key does not start to function as Ctrl,
+// take a look at your "Keyboard Settings > Layouts > Options" and disable or
+// change the "Switching to another layout" shortcut
 
 default partial alphanumeric_keys modifier_keys
 xkb_symbols "colemak_dh_ansi" {
