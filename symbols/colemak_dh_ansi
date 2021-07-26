@@ -23,28 +23,50 @@
 // NOTE: In case your CapsLock key does not start to function as Ctrl,
 // take a look at your "Keyboard Settings > Layouts > Options" and disable or
 // change the "Switching to another layout" shortcut. Also, try changing the
-// order of the listed layouts.
+// order of the listed layouts
 
 default partial alphanumeric_keys modifier_keys
 xkb_symbols "basic" {
-
   include "us"
 
   name[Group1] = "Colemak-DH ANSI";
 
+  include "colemak_dh_ansi(capslock_ctrl_esc)"
+  include "colemak_dh_ansi(backslash_backspace)"
+  include "colemak_dh_ansi(menu_rctrl)"
+  include "colemak_dh_ansi(symbols)"
+  include "colemak_dh_ansi(movement)"
+
+  include "level3(ralt_switch)"
+};
+
+// Rearrange CapsLock, Ctrl, Esc
+hidden partial alphanumeric_keys
+xkb_symbols "capslock_ctrl_esc" {
   key <CAPS> { [ Control_L ] };
   key <LCTL> { [ Escape    ] };
   key <ESC>  { [ Caps_Lock ] };
+};
 
+// Rearrange Backslash and Backspace, and also add Del to Backspace
+hidden partial alphanumeric_keys
+xkb_symbols "backslash_backspace" {
   key <BKSL> { [ BackSpace, BackSpace, Delete             ] };
-  key <BKSP> { [ backslash, bar,       notsign, brokenbar ] };
+  key <BKSP> { [ backslash, bar,       notsign, brokenbar ] }; // \ | ¬ ¦
+};
 
+// Rearrange Menu and Right Ctrl
+hidden partial alphanumeric_keys
+xkb_symbols "menu_rctrl" {
   key <MENU>  { [ Control_R ] };
   key <RCTL>  { [ Menu      ] };
+};
 
-  key <LSGT> { [ backslash, bar, backslash, bar ] };
-
-  key <TLDE> { [ grave, asciitilde, dead_grave, dead_tilde ] };
+// Add symbols and make room for movement keys
+hidden partial alphanumeric_keys
+xkb_symbols "symbols" {
+  key <LSGT> { [ backslash, bar,        backslash,  bar        ] }; // \ | \ |
+  key <TLDE> { [ grave,     asciitilde, dead_grave, dead_tilde ] };
 
   key <AE01> { [ 1,     exclam,      onesuperior,     exclamdown       ] };
   key <AE02> { [ 2,     at,          twosuperior,     dead_doubleacute ] };
@@ -61,7 +83,7 @@ xkb_symbols "basic" {
 
   key <AD01> { [ q,            Q,          adiaeresis, Adiaeresis ] };
   key <AD02> { [ w,            W,          aring,      Aring      ] };
-  key <AD03> { type="CUSTOM_THREE_LEVEL", symbols=[ f, F, Up      ] };
+  key <AD03> { [ f,            F                                  ] };
   key <AD04> { [ p,            P,          odiaeresis, Odiaeresis ] };
   key <AD05> { [ b,            B,          eth,        ETH        ] };
   key <AD06> { [ j,            J,          idiaeresis, Idiaeresis ] };
@@ -73,9 +95,9 @@ xkb_symbols "basic" {
   key <AD12> { [ bracketright, braceright, ssharp,     section    ] };
 
   key <AC01> { [ a,          A,        aacute,     Aacute         ] };
-  key <AC02> { type="CUSTOM_THREE_LEVEL", symbols=[ r, R, Left    ] };
-  key <AC03> { type="CUSTOM_THREE_LEVEL", symbols=[ s, S, Down    ] };
-  key <AC04> { type="CUSTOM_THREE_LEVEL", symbols=[ t, T, Right   ] };
+  key <AC02> { [ r,          R                                    ] };
+  key <AC03> { [ s,          S                                    ] };
+  key <AC04> { [ t,          T                                    ] };
   key <AC05> { [ g,          G,        ediaeresis, Ediaeresis     ] };
   key <AC06> { [ m,          M,        thorn,      THORN          ] };
   key <AC07> { [ n,          N,        ntilde,     Ntilde         ] };
@@ -87,13 +109,28 @@ xkb_symbols "basic" {
   key <AB01> { [ x,      X,        oe,            OE            ] };
   key <AB02> { [ c,      C,        cent,          mu            ] };
   key <AB03> { [ d,      D,        ae,            AE            ] };
-  key <AB04> { type="CUSTOM_THREE_LEVEL", symbols=[ v, V, Home  ] };
-  key <AB05> { type="CUSTOM_THREE_LEVEL", symbols=[ z, Z, Prior ] };
-  key <AB06> { type="CUSTOM_THREE_LEVEL", symbols=[ k, K, Next  ] };
-  key <AB07> { type="CUSTOM_THREE_LEVEL", symbols=[ h, H, End   ] };
+  key <AB04> { [ v,      V                                      ] };
+  key <AB05> { [ z,      Z                                      ] };
+  key <AB06> { [ k,      K                                      ] };
+  key <AB07> { [ h,      H                                      ] };
   key <AB08> { [ comma,  less,     ccedilla,      Ccedilla      ] };
   key <AB09> { [ period, greater,  dead_abovedot, dead_caron    ] };
   key <AB10> { [ slash,  question, questiondown,  dead_hook     ] };
+};
 
-  include "level3(ralt_switch)"
+// Add movement keys
+hidden partial alphanumeric_keys
+xkb_symbols "movement" {
+  key.type="CUSTOM_THREE_LEVEL"; // See types/custom_three_level
+
+  key <AD03> { [ f, F, Up ] };
+
+  key <AC02> { [ r, R, Left  ] };
+  key <AC03> { [ s, S, Down  ] };
+  key <AC04> { [ t, T, Right ] };
+
+  key <AB04> { [ v, V, Home  ] };
+  key <AB05> { [ z, Z, Prior ] };
+  key <AB06> { [ k, K, Next  ] };
+  key <AB07> { [ h, H, End   ] };
 };

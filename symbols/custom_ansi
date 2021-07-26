@@ -23,45 +23,73 @@
 // NOTE: In case your CapsLock key does not start to function as Ctrl,
 // take a look at your "Keyboard Settings > Layouts > Options" and disable or
 // change the "Switching to another layout" shortcut. Also, try changing the
-// order of the listed layouts.
+// order of the listed layouts
 
 default partial alphanumeric_keys modifier_keys
 xkb_symbols "basic" {
-
   include "us(altgr-intl)"
 
   name[Group1] = "Custom ANSI";
 
+  include "custom_ansi(capslock_ctrl_esc)"
+  include "custom_ansi(backslash_backspace)"
+  include "custom_ansi(menu_rctrl)"
+  include "custom_ansi(symbols)"
+  include "custom_ansi(movement)"
+
+  include "level3(ralt_switch)"
+};
+
+// Rearrange CapsLock, Ctrl, Esc
+hidden partial alphanumeric_keys
+xkb_symbols "capslock_ctrl_esc" {
   key <CAPS> { [ Control_L ] };
   key <LCTL> { [ Escape    ] };
   key <ESC>  { [ Caps_Lock ] };
+};
 
+// Rearrange Backslash and Backspace, and also add Del to Backspace
+hidden partial alphanumeric_keys
+xkb_symbols "backslash_backspace" {
   key <BKSL> { [ BackSpace, BackSpace, Delete             ] };
-  key <BKSP> { [ backslash, bar,       notsign, brokenbar ] };
+  key <BKSP> { [ backslash, bar,       notsign, brokenbar ] }; // \ | ¬ ¦
+};
 
+// Rearrange Menu and Right Ctrl
+hidden partial alphanumeric_keys
+xkb_symbols "menu_rctrl" {
   key <MENU>  { [ Control_R ] };
   key <RCTL>  { [ Menu      ] };
+};
 
-  key <AE09> { [ 9, parenleft,  ordfeminine, dead_breve     ] };
-  key <AE10> { [ 0, parenright, masculine,   dead_abovering ] };
+// Rearrange some symbols and make room for movement keys
+hidden partial alphanumeric_keys
+xkb_symbols "symbols" {
+  key <AE09> { [ 9, parenleft,  ordfeminine, dead_breve     ] }; // 9 ( ª ˘
+  key <AE10> { [ 0, parenright, masculine,   dead_abovering ] }; // 0 ) º °
 
-  key <AD11> { [ bracketleft,  braceleft,  registered, copyright ] };
-  key <AD12> { [ bracketright, braceright, oslash,     Ooblique  ] };
+  key <AD11> { [ bracketleft,  braceleft,  registered, copyright ] }; // [ { ® ©
+  key <AD12> { [ bracketright, braceright, oslash,     Ooblique  ] }; // ] } ø Ø
 
-  key <AC06> { type="CUSTOM_THREE_LEVEL", symbols=[ h, H, Left  ] };
-  key <AC07> { type="CUSTOM_THREE_LEVEL", symbols=[ j, J, Down  ] };
-  key <AC08> { type="CUSTOM_THREE_LEVEL", symbols=[ k, K, Up    ] };
-  key <AC09> { type="CUSTOM_THREE_LEVEL", symbols=[ l, L, Right ] };
-  key <AC10> { [ semicolon, colon, degree, paragraph ] };
+  key <AC04> { [ f,         F,     ntilde,     Ntilde     ] };
+  key <AC05> { [ g,         G,     idiaeresis, Idiaeresis ] };
+  key <AC10> { [ semicolon, colon, degree,     paragraph  ] }; // ; : ° ¶
 
-  key <AC04> { [ f, F, ntilde,     Ntilde     ] };
-  key <AC05> { [ g, G, idiaeresis, Idiaeresis ] };
+  key <AB03> { [ c, C, cent, mu ] }; // c C ¢ µ
+};
 
-  key <AB03> { [ c, C, cent, mu ] };
-  key <AB04> { type="CUSTOM_THREE_LEVEL", symbols=[ v, V, Home  ] };
-  key <AB05> { type="CUSTOM_THREE_LEVEL", symbols=[ b, B, Prior ] };
-  key <AB06> { type="CUSTOM_THREE_LEVEL", symbols=[ n, N, Next  ] };
-  key <AB07> { type="CUSTOM_THREE_LEVEL", symbols=[ m, M, End   ] };
+// Add movement keys
+hidden partial alphanumeric_keys
+xkb_symbols "movement" {
+  key.type="CUSTOM_THREE_LEVEL"; // See types/custom_three_level
 
-  include "level3(ralt_switch)"
+  key <AC06> { [ h, H, Left  ] };
+  key <AC07> { [ j, J, Down  ] };
+  key <AC08> { [ k, K, Up    ] };
+  key <AC09> { [ l, L, Right ] };
+
+  key <AB04> { [ v, V, Home  ] };
+  key <AB05> { [ b, B, Prior ] };
+  key <AB06> { [ n, N, Next  ] };
+  key <AB07> { [ m, M, End   ] };
 };
