@@ -25,7 +25,7 @@
 // change the "Switching to another layout" shortcut. Also, try changing the
 // order of the listed layouts
 
-default partial alphanumeric_keys modifier_keys
+default partial alphanumeric_keys
 xkb_symbols "basic" {
   include "us(altgr-intl)"
 
@@ -43,6 +43,8 @@ xkb_symbols "basic" {
 // Rearrange CapsLock, Ctrl, Esc
 hidden partial alphanumeric_keys
 xkb_symbols "capslock_ctrl_esc" {
+  key.type = "ONE_LEVEL";
+
   key <CAPS> { [ Control_L ] };
   key <LCTL> { [ Escape    ] };
   key <ESC>  { [ Caps_Lock ] };
@@ -51,13 +53,17 @@ xkb_symbols "capslock_ctrl_esc" {
 // Rearrange Backslash and Backspace, and also add Del to Backspace
 hidden partial alphanumeric_keys
 xkb_symbols "backslash_backspace" {
-  key <BKSL> { [ BackSpace, BackSpace, Delete             ] };
+  key.type = "FOUR_LEVEL";
+
+  key <BKSL> { [ BackSpace, BackSpace, Delete,  Delete    ] };
   key <BKSP> { [ backslash, bar,       notsign, brokenbar ] }; // \ | ¬ ¦
 };
 
-// Rearrange Menu and Right Ctrl
+// Rearrange Menu and Right-Ctrl
 hidden partial alphanumeric_keys
 xkb_symbols "menu_rctrl" {
+  key.type = "ONE_LEVEL";
+
   key <MENU>  { [ Control_R ] };
   key <RCTL>  { [ Menu      ] };
 };
@@ -65,6 +71,8 @@ xkb_symbols "menu_rctrl" {
 // Rearrange some symbols and make room for movement keys
 hidden partial alphanumeric_keys
 xkb_symbols "symbols" {
+  key.type = "FOUR_LEVEL_ALPHABETIC";
+
   key <AE09> { [ 9, parenleft,  ordfeminine, dead_breve     ] }; // 9 ( ª ˘
   key <AE10> { [ 0, parenright, masculine,   dead_abovering ] }; // 0 ) º °
 
@@ -81,7 +89,7 @@ xkb_symbols "symbols" {
 // Add movement keys
 hidden partial alphanumeric_keys
 xkb_symbols "movement" {
-  key.type="CUSTOM_THREE_LEVEL"; // See types/custom_three_level
+  key.type = "CUSTOM_THREE_LEVEL"; // See types/custom_three_level
 
   key <AC06> { [ h, H, Left  ] };
   key <AC07> { [ j, J, Down  ] };

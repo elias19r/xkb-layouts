@@ -2,7 +2,7 @@
 // include "custom_three_level"
 // after iso9995
 
-partial default xkb_types "default" {
+default partial xkb_types "default" {
   virtual_modifiers LevelThree;
 
   type "CUSTOM_THREE_LEVEL" {
