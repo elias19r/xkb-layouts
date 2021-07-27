@@ -2,10 +2,10 @@
 //
 // Copy this file to /usr/share/X11/xkb/symbols/custom_ansi and then:
 //
-// - Add the following layout to base.lst and evdev.lst in /usr/share/X11/xkb/rules/
+// - Add the following layout to base.lst and evdev.lst files in /usr/share/X11/xkb/rules/
 // custom_ansi     Custom ANSI
 //
-// - Add the following layout to base.xml and evdev.xml in /usr/share/X11/xkb/rules/
+// - Add the following layout to base.xml and evdev.xml files in /usr/share/X11/xkb/rules/
 // <layout>
 //   <configItem>
 //     <name>custom_ansi</name>

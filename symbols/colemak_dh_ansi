@@ -1,11 +1,11 @@
 // Colemak-DH ANSI
 //
-// Copy this file to /usr/share/X11/xkb/symbols/symbols/colemak_dh_ansi and then:
+// Copy this file to /usr/share/X11/xkb/symbols/colemak_dh_ansi and then:
 //
-// - Add the following layout to base.lst and evdev.lst in /usr/share/X11/xkb/rules/
+// - Add the following layout to base.lst and evdev.lst files in /usr/share/X11/xkb/rules/
 // colemak_dh_ansi Colemak-DH ANSI
 //
-// - Add the following layout to base.xml and evdev.xml in /usr/share/X11/xkb/rules/
+// - Add the following layout to base.xml and evdev.xml files in /usr/share/X11/xkb/rules/
 // <layout>
 //   <configItem>
 //     <name>colemak_dh_ansi</name>
