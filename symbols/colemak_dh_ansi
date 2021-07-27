@@ -27,8 +27,6 @@
 
 default partial alphanumeric_keys
 xkb_symbols "basic" {
-  include "us"
-
   name[Group1] = "Colemak-DH ANSI";
 
   include "colemak_dh_ansi(capslock_ctrl_esc)"
