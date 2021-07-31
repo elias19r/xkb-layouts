@@ -1,4 +1,4 @@
-// Map movement keys on some alphanumeric keys
+// Map movement keys to some alphanumeric keys
 default partial alphanumeric_keys
 xkb_symbols "basic" {
   include "custom_movement(arrows)"

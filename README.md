@@ -42,7 +42,7 @@ from your system's "Keyboard Settings > Layouts"
 Adding files to `~/.config/xkb/` doesn't seem to work properly in X11, so we
 need to directly edit files from `/usr/share/X11/xkb/` for changes to take place
 
-NOTE: It requires `sudo` to edit files from `/usr/share/X11/xkb/` and your
+__NOTE__: It requires `sudo` to edit files from `/usr/share/X11/xkb/` and your
 changes can occasionally be overwritten by system updates
 
 First, copy `symbols/` and `types/` to their respective directories in
