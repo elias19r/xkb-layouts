@@ -7,8 +7,8 @@ for custom ANSI and Colemak-DH ANSI layouts
 
 ### Wayland
 
-As far as I know, when using Wayland one can just copy `rules/`, `symbols/`
-and `types/` into `~/.config/xkb/` directory and it should work
+As far as I know, when using Wayland one can just copy `rules`, `symbols` and
+`types` into the `~/.config/xkb/` directory and it should work
 
 ```sh
 $ mkdir -p ~/.config/xkb
@@ -39,13 +39,13 @@ from your system's "Keyboard Settings > Layouts"
 
 ### X11
 
-Adding files to `~/.config/xkb/` doesn't seem to work properly in X11, so we
+Copying files to `~/.config/xkb/` doesn't seem to work properly in X11, so we
 need to directly edit files from `/usr/share/X11/xkb/` for changes to take place
 
 __NOTE__: It requires `sudo` to edit files from `/usr/share/X11/xkb/` and your
 changes can occasionally be overwritten by system updates
 
-First, copy `symbols/` and `types/` to their respective directories in
+First, copy `symbols` and `types` to their respective directories in
 `/usr/share/X11/xkb/`
 
 ```sh
@@ -106,7 +106,7 @@ include our custom type
 sudo xed /usr/share/X11/xkb/types/complete
 ```
 
-Add the following
+And add the following
 
 ```
     include "custom_three_level"
@@ -126,7 +126,7 @@ defined by [`symbols/custom_rearrange`](symbols/custom_rearrange). In order to
 fix that, disable or change the "Switching to another layout" shortcut
 
 Also, the order you list your keyboard layouts preference affects the way
-key symbols are combined into groups, so keep your custom layouts at the top.
+key symbols are combined into groups, so keep your custom layouts at the top
 
 ## Symbols for "(Custom) ANSI"
 
