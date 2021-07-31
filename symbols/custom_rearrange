@@ -1,0 +1,49 @@
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+  include "custom_rearrange(capslock_ctrl_esc)"
+  include "custom_rearrange(backslash_backspace)"
+  include "custom_rearrange(menu_rctrl)"
+  include "custom_rearrange(symbols)"
+};
+
+// Rearrange CapsLock, Ctrl, Esc
+partial alphanumeric_keys
+xkb_symbols "capslock_ctrl_esc" {
+  key.type[Group1] = "ONE_LEVEL";
+
+  key <CAPS> { [ Control_L ] };
+  key <LCTL> { [ Escape    ] };
+  key <ESC>  { [ Caps_Lock ] };
+};
+
+// Rearrange Backslash and Backspace, and also add Del to Backspace
+partial alphanumeric_keys
+xkb_symbols "backslash_backspace" {
+  key.type[Group1] = "FOUR_LEVEL";
+
+  key <BKSL> { [ BackSpace, BackSpace, Delete,  Delete    ] };
+  key <BKSP> { [ backslash, bar,       notsign, brokenbar ] }; // \ | ¬ ¦
+};
+
+// Rearrange Menu and Right-Ctrl
+partial alphanumeric_keys
+xkb_symbols "menu_rctrl" {
+  key.type[Group1] = "ONE_LEVEL";
+
+  key <MENU>  { [ Control_R ] };
+  key <RCTL>  { [ Menu      ] };
+};
+
+// Rearrange/Replace some symbols
+partial alphanumeric_keys
+xkb_symbols "symbols" {
+  key.type[Group1] = "FOUR_LEVEL_ALPHABETIC";
+
+  key <AE09> { [ NoSymbol, NoSymbol, ordfeminine, cent   ] }; // ª ¢
+  key <AE10> { [ NoSymbol, NoSymbol, masculine,   degree ] }; // º °
+
+  key <AD11> { [ NoSymbol, NoSymbol, registered, copyright ] }; // ® ©
+  key <AD12> { [ NoSymbol, NoSymbol, paragraph,  section   ] }; // ¶ §
+
+  key <AC07> { [ NoSymbol, NoSymbol, ntilde, Ntilde ] }; // ñ Ñ
+};

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xkbConfigRegistry SYSTEM "xkb.dtd">
+<xkbConfigRegistry version="1.1">
+  <layoutList>
+    <layout>
+      <configItem>
+        <name>colemak_dh_ansi</name>
+        <shortDescription>CMK</shortDescription>
+        <description>Colemak-DH ANSI</description>
+      </configItem>
+    </layout>
+    <layout>
+      <configItem>
+        <name>custom_ansi</name>
+        <shortDescription>XA</shortDescription>
+        <description>(Custom) ANSI</description>
+      </configItem>
+    </layout>
+    <layout>
+      <configItem>
+        <name>custom_colemak_dh_ansi</name>
+        <shortDescription>XCA</shortDescription>
+        <description>(Custom) Colemak-DH ANSI</description>
+      </configItem>
+    </layout>
+  </layoutList>
+</xkbConfigRegistry>

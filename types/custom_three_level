@@ -1,7 +1,4 @@
-// Edit the default and complete files in /usr/share/X11/xkb/types/ and add:
-// include "custom_three_level"
-// after iso9995
-
+// This is a modified copy of /usr/share/X11/xkb/types/iso9995
 default partial xkb_types "default" {
   virtual_modifiers LevelThree;
 
@@ -17,8 +14,9 @@ default partial xkb_types "default" {
     level_name[Level2] = "Shift";
     level_name[Level3] = "Level3";
 
-    // As this type preserves the Shift, we can use it when mapping Up, Down,
-    // Left, Right, Home, Prior, Next, End on alphanumeric keys
+    // As this type preserves Shift, we can use it when mapping Up, Down, Left,
+    // Right, Home, Prior, Next, End to alphanumeric keys and still be able to
+    // select text normally in apps when holding Shift
     preserve[Shift+LevelThree] = Shift;
   };
 };

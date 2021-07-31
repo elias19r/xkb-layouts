@@ -1,8 +1,8 @@
 default partial alphanumeric_keys
 xkb_symbols "basic" {
-  name[Group1] = "(Custom) ANSI";
+  name[Group1] = "(Custom) Colemak-DH ANSI";
 
-  include "us(altgr-intl)"
+  include "colemak_dh_ansi"
   include "custom_rearrange"
   include "custom_movement"
   include "level3(ralt_switch)"
