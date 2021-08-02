@@ -4,6 +4,5 @@ xkb_symbols "basic" {
 
   include "us(altgr-intl)"
   include "custom_rearrange"
-  include "custom_movement"
   include "level3(ralt_switch)"
 };

@@ -7,14 +7,14 @@ for custom ANSI and Colemak-DH ANSI layouts
 
 ### Wayland
 
-As far as I know, when using Wayland one can just copy `rules`, `symbols` and
-`types` into the `~/.config/xkb/` directory and it should work
+As far as I know, when using Wayland one can just copy `rules` and `symbols`
+into the `~/.config/xkb/` directory and it should work
 
 ```sh
 $ mkdir -p ~/.config/xkb
 $
 $ cd xkb-layouts/
-$ cp -r rules symbols types  ~/.config/xkb/
+$ cp -r rules symbols  ~/.config/xkb/
 $
 $ tree ~/.config/xkb/
 
@@ -22,35 +22,31 @@ $ tree ~/.config/xkb/
 ├── rules
 │   ├── evdev
 │   └── evdev.xml
-├── symbols
-│   ├── colemak_dh_ansi
-│   ├── custom_ansi
-│   ├── custom_colemak_dh_ansi
-│   ├── custom_movement
-│   └── custom_rearrange
-└── types
-    └── custom_three_level
+└── symbols
+    ├── colemak_dh_ansi
+    ├── custom_ansi
+    ├── custom_colemak_dh_ansi
+    └── custom_rearrange
 
-3 directories, 8 files
+2 directories, 6 files
 ```
 
-Then log out and log in for keyboard layouts to be loaded and choose a layout
+Then log out and log in for keyboard layouts to be reloaded and choose a layout
 from your system's "Keyboard Settings > Layouts"
 
 ### X11
 
-Copying files to `~/.config/xkb/` doesn't seem to work properly in X11, so we
+Copying files into `~/.config/xkb/` doesn't seem to work properly in X11, so we
 need to directly edit files from `/usr/share/X11/xkb/` for changes to take place
 
 __NOTE__: It requires `sudo` to edit files from `/usr/share/X11/xkb/` and your
 changes can occasionally be overwritten by system updates
 
-First, copy `symbols` and `types` to their respective directories in
-`/usr/share/X11/xkb/`
+So copy `symbols` into `/usr/share/X11/xkb/`
 
 ```sh
 $ cd xkb-layouts/
-$ sudo cp -r symbols types  /usr/share/X11/xkb/
+$ sudo cp -r symbols  /usr/share/X11/xkb/
 ```
 
 Then we need to manually edit `rules/evdev.lst` and `rules/evdev.xml` from
@@ -99,20 +95,7 @@ Find the `<layoutList>` section in the file and add the following
     </layout>
 ```
 
-Finally, we need to manually edit `types/complete` from `/usr/share/X11/xkb/` to
-include our custom type
-
-```sh
-sudo xed /usr/share/X11/xkb/types/complete
-```
-
-And add the following
-
-```
-    include "custom_three_level"
-```
-
-Then log out and log in for keyboard layouts to be loaded and choose a layout
+Then log out and log in for keyboard layouts to be reloaded and choose a layout
 from your system's "Keyboard Settings > Layouts"
 
 ## Important Notes
@@ -122,11 +105,22 @@ your system can automatically enable the "Switching to another layout" shortcut
 in "Keyboard Settings > Layouts > Options"
 
 That can cause your <kbd>CapsLock</kbd> not to function as <kbd>Ctrl</kbd> as
-defined by [`symbols/custom_rearrange`](symbols/custom_rearrange). In order to
-fix that, disable or change the "Switching to another layout" shortcut
+defined by [`symbols/custom_rearrange`](symbols/custom_rearrange). To fix that,
+disable or change the "Switching to another layout" shortcut
 
-Also, the order you list your keyboard layouts preference affects the way
-key symbols are combined into groups, so keep your custom layouts at the top
+Also, the order you list your keyboard layouts preference affects the way key
+symbols are combined into groups, so keep your custom layouts at the top
+
+## Mapping navigation keys on alphanumeric keys
+
+I had previously mapped navigation keys on some alphanumeric keys using <kbd>AltGr</kbd>.
+However, that requires a custom version of `/usr/share/X11/xkb/types/iso9995`
+for it to preserve Shift, so we can select text while holding Shift, and also
+takes space that could be used by international symbols
+
+So I've removed that mapping and I'd recommend you to map navigation keys using
+your keyboard's <kbd>Fn</kbd> which is usually possible through a customization
+software developed by the manufacturer or open-source alternatives
 
 ## Symbols for "(Custom) ANSI"
 
