@@ -54,7 +54,7 @@ Then we need to manually edit `rules/evdev.lst` and `rules/evdev.xml` from
 
 ```sh
 # xed, vim or any other text editor
-sudo xed /usr/share/X11/xkb/rules/evdev.lst
+$ sudo xed /usr/share/X11/xkb/rules/evdev.lst
 ```
 
 Find the `! layout` section in the file and add the following
@@ -66,7 +66,7 @@ Find the `! layout` section in the file and add the following
 ```
 
 ```sh
-sudo xed /usr/share/X11/xkb/rules/evdev.xml
+$ sudo xed /usr/share/X11/xkb/rules/evdev.xml
 ```
 
 Find the `<layoutList>` section in the file and add the following
@@ -108,7 +108,7 @@ That can cause your <kbd>CapsLock</kbd> not to function as <kbd>Ctrl</kbd> as
 defined by [`symbols/custom_rearrange`](symbols/custom_rearrange). To fix that,
 disable or change the "Switching to another layout" shortcut
 
-Also, the order you list your keyboard layouts preference affects the way key
+Also, the order you list your keyboard layouts preference affects the way
 symbols are combined into groups, so keep your custom layouts at the top
 
 ## Mapping navigation keys on alphanumeric keys
@@ -120,7 +120,8 @@ takes space that could be used by international symbols
 
 So I've removed that mapping and I'd recommend you to map navigation keys using
 your keyboard's <kbd>Fn</kbd> which is usually possible through a customization
-software developed by the manufacturer or open-source alternatives
+software developed by the manufacturer or open-source alternatives like
+[QMK](https://qmk.fm/)
 
 ## Symbols for "(Custom) ANSI"
 
