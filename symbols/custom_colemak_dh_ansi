@@ -4,5 +4,6 @@ xkb_symbols "basic" {
 
   include "colemak_dh_ansi"
   include "custom_rearrange"
+  include "custom_symbols"
   include "level3(ralt_switch)"
 };

@@ -1,0 +1,11 @@
+// Add/Replace some symbols
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+  key <AD11> { [ NoSymbol, NoSymbol, ordfeminine, NoSymbol ] }; // ª
+  key <AD12> { [ NoSymbol, NoSymbol, masculine,   NoSymbol ] }; // º
+
+  key <AD01> { [ NoSymbol, NoSymbol, atilde, Atilde ] }; // ã Ã
+  key <AD02> { [ NoSymbol, NoSymbol, agrave, Agrave ] }; // à À
+
+  key <AC05> { [ NoSymbol, NoSymbol, otilde, Otilde ] }; // õ Õ
+};

@@ -9,10 +9,8 @@ xkb_symbols "basic" {
 
 hidden partial alphanumeric_keys
 xkb_symbols "symbols" {
-  key.type[Group1] = "FOUR_LEVEL_ALPHABETIC";
-
-  key <AD01> { [ q,         Q,     NoSymbol,   NoSymbol   ] }; // not changed from QWERTY
-  key <AD02> { [ w,         W,     NoSymbol,   NoSymbol   ] }; // not changed from QWERTY
+  //  <AD01> Q has not changed from QWERTY
+  //  <AD02> W has not changed from QWERTY
   key <AD03> { [ f,         F,     f,          F          ] };
   key <AD04> { [ p,         P,     odiaeresis, Odiaeresis ] };
   key <AD05> { [ b,         B,     b,          B          ] };
@@ -22,11 +20,11 @@ xkb_symbols "symbols" {
   key <AD09> { [ y,         Y,     udiaeresis, Udiaeresis ] };
   key <AD10> { [ semicolon, colon, paragraph,  degree     ] };
 
-  key <AC01> { [ a, A, NoSymbol,   NoSymbol   ] }; // not changed from QWERTY
+  //  <AC01> A has not changed from QWERTY
   key <AC02> { [ r, R, ediaeresis, Ediaeresis ] };
   key <AC03> { [ s, S, ssharp,     section    ] };
   key <AC04> { [ t, T, thorn,      THORN      ] };
-  key <AC05> { [ g, G, NoSymbol,   NoSymbol   ] }; // not changed from QWERTY
+  //  <AC05> G has not changed from QWERTY
   key <AC06> { [ m, M, mu,         mu         ] };
   key <AC07> { [ n, N, ntilde,     Ntilde     ] };
   key <AC08> { [ e, E, eacute,     Eacute     ] };
@@ -36,7 +34,7 @@ xkb_symbols "symbols" {
   key <AB01> { [ x, X, oe,        OE       ] };
   key <AB02> { [ c, C, copyright, cent     ] };
   key <AB03> { [ d, D, eth,       ETH      ] };
-  key <AB04> { [ v, V, NoSymbol,  NoSymbol ] }; // not changed from QWERTY
+  //  <AB04> V has not changed from QWERTY
   key <AB05> { [ z, Z, ae,        AE       ] };
   key <AB06> { [ k, K, oe,        OE       ] };
   key <AB07> { [ h, H, h,         H        ] };

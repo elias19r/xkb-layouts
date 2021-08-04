@@ -26,9 +26,10 @@ $ tree ~/.config/xkb/
     ├── colemak_dh_ansi
     ├── custom_ansi
     ├── custom_colemak_dh_ansi
-    └── custom_rearrange
+    ├── custom_rearrange
+    └── custom_symbols
 
-2 directories, 6 files
+2 directories, 7 files
 ```
 
 Then log out and log in for keyboard layouts to be reloaded and choose a layout
